@@ -38,4 +38,23 @@ O uso do padrão Interpreter é recomendado quando houver uma linguagem a se int
     - constrói ou recebe uma arvore sintática abstrata que representa uma determinada sentença na linguagem definida pela gramática.
     - invoca a operação interpret.
 
+## Colaboradores
+
+ - O cliente constrói ou recebe a sentença como uma arvore sintática abstrata de instancias de NonTermanalExpression e TerminalExpression.Então o cliente inicia o contexto e invoca a função ``interpret``.
+ - Cada nó NonTerminalExpressoin define interpret em termos de interpret em cada sub-expressão. A operação interpret de cada TerminalExpression define o caso base na recursão.
+ - As operações ``interpret`` em cada nó utilizam o contexto para armazenar e acessar o estado do interpretador.
+
+## Consequências
+
+O padrão Interpreter tem os seguintes benefícios e deficiências.
+
+1. É fácil de mudar e estender a gramatica.
+2. Implementar a gramatica também é fácil.
+3. Gramaticas complexas são difíceis de se manter.
+4. Adicionando novas maneiras de se interpretar expressões.
+
+## Implementação
+
+
+
 
